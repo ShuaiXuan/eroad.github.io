@@ -1,0 +1,201 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>2号线</title>
+    <script src="echarts.min.js"></script>
+</head>
+<body>
+    <div id="chart2" style="width:500px;height:500px;position: fixed;left: 0%;"></div>
+</body>
+<script type="text/javascript">
+
+var chartDom = document.getElementById('chart2');
+var myChart = echarts.init(chartDom);
+var option;
+
+option = {
+    backgroundColor:'',
+    tooltip: {
+        trigger: 'axis',
+        axisPointer: {           
+            type: 'shadow'       
+        }
+    },
+    legend: {
+        data: ['净人数', '出站人数', '入站人数'],
+        textStyle:{
+            color:function(params){
+            }
+        }
+    },
+    grid: {
+        left: '3%',
+        right: '4%',
+        bottom: '3%',
+        containLabel: true
+    },
+    xAxis: [
+        {
+            type: 'value'
+        }
+    ],
+    yAxis: [
+        {
+            type: 'category',
+            axisTick: {
+                show: false
+            },
+            data: ['51站',
+'105站',
+'24站',
+'139站',
+'71站',
+'57站',
+'76站',
+'52站',
+'68站',
+'151站',
+'48站',
+'27站',
+'81站',
+'127站',
+'123站',
+'47站',
+'18站',
+'79站',
+'78站',
+'53站',
+'163站',
+'9站',
+'129站']
+        }
+    ],
+    series: [
+        {
+            name: '净人数',
+            type: 'bar',
+            label: {
+                show: true,
+                position: 'inside',
+                color:'white'
+            },
+            emphasis: {
+                focus: 'series'
+            },
+            data: [-44,
+25,
+13,
+201,
+-133,
+117,
+-10,
+11,
+139,
+174,
+698,
+324,
+-585,
+-915,
+34,
+-603,
+-41,
+-343,
+-165,
+33,
+470,
+921,
+794]
+        },
+        {
+            name: '入站人数',
+            type: 'bar',
+            stack: '总量',
+            label: {
+                show: true,
+                position: 'right',
+                color:'white'
+            },
+            itemStyle:{
+                    normal:{
+                            color:'#4ad2ff'
+                    }
+            },
+            emphasis: {
+                focus: 'series'
+            },
+            data: [736,
+501,
+219,
+1620,
+789,
+876,
+3841,
+1764,
+3545,
+2155,
+2630,
+3437,
+10449,
+11805,
+5958,
+12481,
+863,
+5943,
+1806,
+2314,
+1918,
+12036,
+16917]
+        },
+        {
+            name: '出站人数',
+            type: 'bar',
+            stack: '总量',
+            label: {
+                show: true,
+                position: 'left',
+                color:'white'
+            },
+            itemStyle:{
+                    normal:{
+                            color:'#F2279D'
+                    }
+            },
+            emphasis: {
+                focus: 'series'
+            },
+            data: [-780,
+-476,
+-206,
+-1419,
+-922,
+-759,
+-3851,
+-1753,
+-3406,
+-1981,
+-1932,
+-3113,
+-11034,
+-12720,
+-5924,
+-13084,
+-904,
+-6286,
+-1971,
+-2281,
+-1448,
+-11115,
+-16123]
+        }
+    ]
+};
+
+option && myChart.setOption(option);
+
+
+</script>
+</html>

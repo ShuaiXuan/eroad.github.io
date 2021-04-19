@@ -1,0 +1,223 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>乘客年龄分布</title>
+    <script src="echarts.min.js"></script>
+</head>
+<body>
+    <div id="chart1" style="width:800px;height:445px;position: fixed;left: 10%;"></div>
+    <div id="chart2" style="margin-top:-24px;width:400px;height:240px;float:left;left:8%"></div>
+    <div id="chart3" style="margin-top:-24px;width:400px;height:240px;float:left;left:11%"></div>
+</body>
+<script type="text/javascript">
+
+var chartDom = document.getElementById('chart1');
+var myChart = echarts.init(chartDom);
+var option;
+
+option = {
+    backgroundColor:'',
+    legend: {
+        orient: 'vertical',
+        left: 'left',
+        textStyle:{
+            color:"#fff"
+        }
+    }, 
+    backgroundColor:'',
+    title: {
+        text: '乘客年龄分布',
+        subtext: '10-95岁，每5岁一档',
+        left: 'center',
+        textStyle:{
+            color:'#FA7B20',
+            fontSize:24
+        }
+    },
+    tooltip: {
+        trigger: 'item'
+    },
+
+    series: [
+    {
+            name: '年龄区间',
+            type: 'pie',
+            radius: ['30%', '75%'],
+            avoidLabelOverlap: false,
+            label: {
+                show: false,
+                position: 'center'
+            },
+
+            emphasis: {
+                label: {
+                    show: true,
+                    fontSize: '30',
+                    color:"#FA7B20",
+                    fontWeight: 'bold'
+                }
+            },
+            labelLine: {
+                show: false
+            },
+            data: [
+            {value:78,name:'10-15岁'},
+{value:4511,name:'15-20岁'},
+{value:24792,name:'20-25岁'},
+{value:18842,name:'25-30岁'},
+{value:13178,name:'30-35岁'},
+{value:8097,name:'35-40岁'},
+{value:4739,name:'40-45岁'},
+{value:4876,name:'45-50岁'},
+{value:2415,name:'50-55岁'},
+{value:1040,name:'55-60岁'},
+{value:266,name:'60-65岁'},
+{value:132,name:'65-70岁'},
+{value:54,name:'70-75岁'},
+{value:19,name:'75-80岁'},
+{value:6,name:'80-85岁'},
+{value:3,name:'85-90岁'},
+{value:1,name:'90-95岁'}
+            ]
+        }
+    ]
+};
+
+option && myChart.setOption(option);
+
+var chartDom = document.getElementById('chart2');
+var myChart = echarts.init(chartDom);
+var option;
+
+option = {
+    backgroundColor:'',
+    title: {
+        text: '早晚高峰乘客年龄分布',
+        subtext: '取早高峰7:00-9:00，晚高峰17:00-19:00',
+        left: 'center',
+        textStyle:{
+            color:'#FA7B20'
+        }
+    },
+    tooltip: {
+        formatter: '{b}({d}%)',
+        trigger: 'item',
+        
+    },
+
+    series: [
+    {
+            name: '年龄区间',
+            type: 'pie',
+            radius: ['30%', '60%'],
+            avoidLabelOverlap: false,
+            label: {
+                show: false,
+                position: 'center'
+            },
+            emphasis: {
+                label: {
+                    show: true,
+                    fontSize: '18',
+                    color:"#FA7B20",
+                    fontWeight: 'bold'
+                }
+            },
+            labelLine: {
+                show: false
+            },
+            data: [
+            {value:48,name:'10-15岁'},
+{value:8897,name:'15-20岁'},
+{value:90883,name:'20-25岁'},
+{value:89636,name:'25-30岁'},
+{value:53217,name:'30-35岁'},
+{value:27645,name:'35-40岁'},
+{value:12216,name:'40-45岁'},
+{value:11450,name:'45-50岁'},
+{value:5213,name:'50-55岁'},
+{value:1956,name:'55-60岁'},
+{value:425,name:'60-65岁'},
+{value:234,name:'65-70岁'},
+{value:79,name:'70-75岁'},
+{value:13,name:'75-80岁'},
+{value:15,name:'80-85岁'},
+{value:3,name:'85-90岁'}
+            ]
+        }
+    ]
+};
+
+option && myChart.setOption(option);
+
+var chartDom = document.getElementById('chart3');
+var myChart = echarts.init(chartDom);
+var option;
+
+option = {
+    backgroundColor:'',
+    title: {
+        text: '其他时段乘客年龄分布',
+        left: 'center',
+        textStyle:{
+            color:'#FA7B20'
+        }
+    },
+    tooltip: {
+        formatter: '{b}({d}%)',
+        trigger: 'item',
+        
+    },
+
+    series: [
+    {
+            name: '年龄区间',
+            type: 'pie',
+            radius: ['30%', '60%'],
+            avoidLabelOverlap: false,
+            label: {
+                show: false,
+                position: 'center'
+            },
+            emphasis: {
+                label: {
+                    show: true,
+                    fontSize: '18',
+                    color:"#FA7B20",
+                    fontWeight: 'bold'
+                }
+            },
+            labelLine: {
+                show: false
+            },
+            data: [
+            {value:48,name:'10-15岁'},
+{value:257,name:'15-20岁'},
+{value:25408,name:'20-25岁'},
+{value:168647,name:'25-30岁'},
+{value:123165,name:'30-35岁'},
+{value:70762,name:'35-40岁'},
+{value:39284,name:'40-45岁'},
+{value:21707,name:'45-50岁'},
+{value:23479,name:'50-55岁'},
+{value:10918,name:'55-60岁'},
+{value:4242,name:'60-65岁'},
+{value:1148,name:'65-70岁'},
+{value:673,name:'70-75岁'},
+{value:191,name:'75-80岁'},
+{value:77,name:'80-85岁'},
+{value:28,name:'85-90岁'},
+{value:9,name:'90-95岁'}
+            ]
+        }
+    ]
+};
+
+option && myChart.setOption(option);
+
+
+</script>
+</html>

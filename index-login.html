@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="UTF-8">
+	<title>请登录</title>
+	<link rel="stylesheet" type="text/css" href="css/style-login.css">
+	<link href="https://fonts.googleapis.com/css?family=Poppins:600&display=swap" rel="stylesheet">
+	<script src="https://kit.fontawesome.com/a81368914c.js"></script>
+  <script src="js/jquery.min.js"></script>>
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+</head>
+<body >
+	<img class="wave" src="img/wave2.png">
+  <img class="wave2" src="img/wave3.png">
+	<div class="container">
+		<div class="img">
+			<img src="img/p-shape2.png" >
+		</div>
+		<div class="login-content">
+			<form action="index.html">
+				<img src="assets/images/logo-light2.png" style="margin-bottom: 20px;">
+				<!--<div style="color: #0487F9;font-size: 30px;">请登录</div>-->
+           		<div class="input-div one">
+           		   <div class="i">
+           		   		<i class="fas fa-user"></i>
+           		   </div>
+           		   <div class="div">
+           		   		<h5>邮箱</h5>
+           		   		<input type="text" class="input">
+           		   </div>
+           		</div>
+           		<div class="input-div pass">
+           		   <div class="i"> 
+           		    	<i class="fas fa-lock"></i>
+           		   </div>
+           		   <div class="div">
+           		    	<h5>密码</h5>
+           		    	<input type="password" class="input">
+            	   </div>
+            	</div>
+            	<a href="#">忘记密码？</a>
+            	<div id="login" class="btn" style="text-align: center;padding-top: 10px;">登录</div>
+            </form>
+        </div>
+    </div>
+    <script>
+      $(document).ready(function(){
+        $('#login').click(function(){
+          window.location.href="index-e.html";
+        });
+      });
+    </script>
+    <script type="text/javascript" src="js/main.js"></script>
+</body>
+</html>

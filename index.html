@@ -1,0 +1,618 @@
+<!DOCTYPE html>
+<html class="no-js" lang="">
+  <head>
+    <meta charset="utf-8" />
+    <title>地铁人流量预测分析——全员饿人</title>
+    <meta name="description" content="" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+
+    <meta property="og:title" content="" />
+    <meta property="og:type" content="" />
+    <meta property="og:url" content="" />
+    <meta property="og:image" content="" />
+
+    
+    <link rel="apple-touch-icon" href="icon.png" />
+    <!-- Place favicon.ico in the root directory -->
+
+    <!-- Bootstrap css -->
+    <link rel="stylesheet" href="assets/css/bootstrap.min.css" />
+    <!-- Vendors Plugins -->
+    <link rel="stylesheet" href="assets/vendor/fontawesome/css/all.css" />
+    <link rel="stylesheet" href="assets/vendor/slick/slick-theme.css" />
+    <link rel="stylesheet" href="assets/vendor/slick/slick.css" />
+    <link rel="stylesheet" href="assets/vendor/animation/animate.css" />
+    <link rel="stylesheet" href="assets/vendor/venobox/venobox.css" />
+    <link rel="stylesheet" href="assets/vendor/flaticon/flaticon.css" />
+    <link rel="stylesheet" href="assets/vendor/arrow-font/flaticon.css" />
+    <!-- style css -->
+    <link rel="stylesheet" href="assets/css/style.css" />
+    <!-- responsive css -->
+    <link rel="stylesheet" href="assets/css/responsive.css" />
+
+    <meta name="theme-color" content="#fafafa" />
+  </head>
+
+  <body id="home">
+      
+    <!-- preloader start -->
+   
+    <header>
+      <!-- Main Menu Start -->
+      <div class="site-navigation menu-transparent">
+        <nav class="navbar navbar-expand-lg navbar-light navbar-floating">
+          <div>
+          <a class="navbar-brand" href="index.html">
+              <img src="assets/images/logo-light.png" width="80%" height="80%"  class="img-fluid" />
+          </a>
+          </div>
+          <div class="pa container">
+            <!-- Collapse -->
+            <div class="collapse navbar-collapse  mainmenu" id="navbarMenu">
+              <ul class="navbar-nav mx-auto">
+
+                <li class="newactive">
+                <a class="nav-link " href="index.html" id="navbar1" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                      主页
+                </a>
+                </li>
+
+                <li class="nav-item ">
+                  <a href="index-e.html" class="nav-link"> 实时数据分析 </a>
+                </li>
+
+                <li class="nav-item">
+                  <a href="index-line.html" class="nav-link"> 线路人流量 </a>
+                </li>
+               
+                <li class="nav-item">
+                  <a href="contact.html" class="nav-link"> 联系我们 </a>
+                </li>
+              </ul>
+           
+            </div>
+            <!-- / .navbar-collapse -->
+          </div>
+          <!-- / .container -->
+        </nav>
+      </div>
+    </header>
+    <!-- Header ENd -->
+       
+      <!-- Banner Section Start -->
+      <section class="banner-2">
+
+        <!--控制蓝色背景-->
+        <div class="banner-shape2">
+          <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="100%" height="100%" viewBox="0 0 1920 920">
+            <defs>
+              <linearGradient id="linear-gradient" x1="0.5" x2="0.5" y2="1" gradientUnits="objectBoundingBox">
+                <stop offset="0" stop-color="#3f48ef"/>
+                <stop offset="1" stop-color="#4855f9"/>
+              </linearGradient>
+            </defs>
+            <g id="Group_1939" data-name="Group 1939" transform="translate(0 0.601)">
+              <path id="_2" data-name="2" d="M5127,919.4s424.672-234.31,932.879-77S7047,850.756,7047,850.756V-.028L5127-.6Z" transform="translate(-5127)" fill="url(#linear-gradient)"/>
+              <path id="_1" data-name="1" d="M5127,168.681S5551.672,685.089,6059.879,842.4,7047,850.756,7047,850.756V-.028L5127-.6Z" transform="translate(-5127)" fill="#3f48ef"/>
+            </g>
+          </svg>
+        </div>
+
+        <!--控制背景上的内容-->
+        <div class="banner-main2 d-flex banner-bg align-items-center">
+          <div class="container">
+            <div class="row ">
+              <div class="col-xl-7">
+                  <div class="banner-content-2">
+                      <h1 class="mb-40" >地铁人流量分析预测</h1>
+                      <p class="mb-40"><h2>更准确、更高效、更方便的出行 </h2></p>
+                      <a href="index-login.html" class="btn btn-main btn-radius">开始</a>
+                  </div>
+              </div>
+              <div class="col-xl-5">
+                <div class="banner-img2 d-none d-lg-block" >
+                    <div class="banner-shape-img">
+                      <img src="assets/images/banner/bg-shape-1.png" alt="" class="img-fluid ">
+                    </div>
+                    <div class="banner-shape-img2">
+                      <img src="assets/images/banner/bg-shape2.png" alt="" class="img-fluid">
+                    </div>
+                    <div class="banner-shape-img3">
+                      <img src="assets/images/banner/bg-shape3.png" alt="" class="img-fluid">
+                    </div>
+                    <div class="banner-shape-img4">
+                      <img src="assets/images/banner/bg-shaperound.png"  alt="" class="img-fluid">
+                    </div>
+                    <img src="assets/images/banner/banner-img3.png" alt="" class="img-fluid">
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+      <!-- Banner Section End -->
+      <!--About section strat-->
+      <section class="about2 section pb-110">
+      <div class="container">
+        <div class="row align-items-center justify-content-lg-center">
+          <div class="col-xl-6 col-lg-12">
+            <div class="about-content-wrapper mb-5 mb-xl-0">
+              <div class="row justify-content-lg-center">
+                <div class="col-xl-12 col-lg-8">
+                  <div class="section-heading mb-50 text-center text-xl-left overflow-hidden" >
+                    <span class="text-primary text-uppercase mb-10 d-inline-block wow slideInLeft"  data-wow-delay=".1s">About us</span>
+                    <h2 class="wow slideInLeft mb-40" data-wow-delay=".2s">为了更方便的出行</h2>
+                    <p>轨道交通智慧客流分析预测</p>
+                  </div>
+                </div>
+              </div>
+
+              <div class="about-content">
+                <div class="row justify-content-lg-center">
+                  <div class="col-xl-12 col-lg-10">
+                    <div class="main-navtab wow slideInUp" data-wow-delay=".3s">
+                      <ul class="nav nav-pills nav-justified" role="tablist">
+                        <li class="nav-item" role="presentation">
+                          <a class="nav-link active"  data-toggle="pill" href="#pills-home" role="tab" aria-selected="true">背景</a>
+                        </li>
+                        <li class="nav-item" role="presentation">
+                          <a class="nav-link"  data-toggle="pill" href="#pills-profile" role="tab"  aria-selected="false">我们的任务</a>
+                        </li>
+                        <li class="nav-item" role="presentation">
+                          <a class="nav-link" data-toggle="pill" href="#pills-contact" role="tab" aria-selected="false">我们的目标</a>
+                        </li>
+                      </ul>
+                      <div class="tab-content" id="pills-tabContent">
+                        <div class="tab-pane fade show active" id="pills-home" role="tabpanel">
+                          中国的城轨交通行业信息化建设步入了快速的发展阶段，信息化建设的成果初具规模，改变了传统的建设模式、服务手段和经营方式。基于用户乘车行为大数据为基础的客流分析以及预测模型是轨道交通企业运营管理以及乘客服务的非常重要的一环，也是智慧城轨发展纲要中非常重要的一个示范工程。
+                        </div>
+                        <div class="tab-pane fade" id="pills-profile" role="tabpanel" >
+                          提供友好的用户交互方式，通过输入或者调整模型的各种相关因子，对指定 时间、指定线路或者站点的客流进行预测和预警并且通过图形化的方式直观展现。
+                        </div>
+                        <div class="tab-pane fade" id="pills-contact" role="tabpanel" >
+                          提高整个交通系统的安全性、舒适性和经济效益。能够为有关部门处理紧急突发事件提供有效的数据支持和决策依据。
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div class="col-xl-6 col-lg-8">
+              <div class="about-img2 mt-5 mt-xl-0 wow zoomIn d-none d-lg-block"  data-wow-delay=".2s">
+                <div class="about-shape-img">
+                  <img src="assets/images/about/about-animate.png" width="100%" height="90%" alt="" >
+                </div>
+                <div class="about-shape-img2">
+                  <img src="assets/images/about/about-animate2.png"  alt="" class="img-fluid">
+                </div>
+                <img src="assets/images/about/about-bg4.png" alt="" class="img-fluid mx-auto">
+              </div>
+          </div>
+        </div>
+      </div>
+    </section>
+    <!-- About Section End-->
+
+     <!-- How it Works  Section Start -->
+     <section class="page-ban process2 pt-110 pb-80 section">
+      <div class="container">
+        <div class="row justify-content-center">
+          <div class="col-xl-8">
+            <div class="section-heading text-center mb-70">
+               <span class="text-primary text-uppercase mb-10 d-inline-block wow slideInUp" data-wow-duration="1s"  data-wow-delay="0s">we provide</span>
+               <h2 class="wow flipInX" data-wow-duration="1s"  data-wow-delay=".1s">我们提供</h2>
+            </div>
+          </div>
+        </div>
+
+        <div class="row">
+          <div class="col-xl-4 col-lg-4">
+            <div class="process-item mb-5 mb-xl-0 text-center wow zoomIn style-2"  data-wow-delay=".1s">
+               <div class="process-icon">
+                 <i class="flaticon flaticon-database-storage"></i>
+               </div>
+              <h3 class="mb-20">单日整体客流分析</h3>
+              <p class="mb-30">建立准确的预测模型，对当日各时间段人流量进行分析预测，为用户提供实时出行建议.</p>
+            </div>
+          </div>
+          <div class="col-xl-4 col-lg-4">
+            <div class="process-item mb-5 mb-xl-0 text-center  wow zoomIn style-2"  data-wow-delay=".3s">
+               <div class="process-icon">
+                 <i class="flaticon flaticon-creative-idea"></i>
+               </div>
+              <h3 class="mb-20">单站点出入客流分析</h3>
+              <p class="mb-30">对大数据进行统计，分析各线路各站点出入站人流量，对客流进行实时监测，全面的掌握路网内的客流分布和动态.</p>
+            </div>
+          </div>
+          <div class="col-xl-4 col-lg-4">
+            <div class="process-item text-center wow zoomIn style-2 no-border"  data-wow-delay=".1s">
+               <div class="process-icon">
+                 <i class="flaticon flaticon-data-scientist"></i>
+               </div>
+              <h3 class="mb-20">用户年龄结构分析</h3>
+              <p class="mb-30">对乘客信息进行统计，分析得到用户年龄层次分布图，有助于轨交业主深入了解乘客，提升轨道服务能力.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+      <!-- Services Section Start -->
+      <section  class="pt-40 section pb-30 service-2">
+        <div class="s-shape1 "></div>
+        <div class="s-shape2"></div>
+        <div class="container">
+          <div class="row justify-content-center">
+            <div class="col-xl-10">
+              <div class="section-heading text-center mb-140 text-center" >
+                  <span class="text-primary text-uppercase mb-10 d-inline-block wow slideInUp"  data-wow-delay="0s">our team</span>
+                  <h2 class="wow flipInX"  data-wow-delay=".1s">关于我们
+                    </h2>
+              </div>
+            </div>
+          </div>
+       <div style="text-align:center">
+        <img src="assets/images/logo-light2.png" style="margin-top: -80px; margin-bottom: 54px;" width="38%" height="38%" />
+       </div>
+
+<!-- Team Section Start -->
+  <section class="team pt-100 pb-0 section team-section">
+    <div class="container">
+      <div class="row justify-content-center">
+        <div class="col-xl-6">
+          <div class="section-heading mb-60 text-center">
+            <span class="text-primary text-uppercase mb-10 d-inline-block ">e路通行团队</span>
+            <h2>成员组成</h2>
+          </div>
+        </div>
+      </div>
+
+      <div class="row">
+        <div class="col-xl-4 col-md-6 col-sm-12">
+          <div class="team-item mb-4 wow pulse team-style-2"  data-wow-delay="100ms">
+            <div class="img-box">
+              <img src="assets/images/team/team-1.jpg" alt="team-image" class="img-fluid">
+            </div>  
+            <div class="team-content">
+              <div class="team-front">
+                <h4>小杨</h4>
+                <p class="text-primary">算法攻城狮</p>
+              </div>
+
+              <div class="team-back">
+                <div class="team-socials">
+                  <a href="#"> <i class="fab fa-facebook"></i></a>
+                  <a href="#"> <i class="fab fa-twitter"></i></a>
+                  <a href="#"> <i class="fab fa-instagram"></i></a>
+                  <a href="#"> <i class="fab fa-linkedin"></i></a>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="col-xl-4 col-md-6 col-sm-12">
+          <div class="team-item mb-4 wow pulse team-style-2"  data-wow-delay="500ms">
+            <div class="img-box">
+              <img src="assets/images/team/teacher.jpg" alt="team-image" class="img-fluid">
+            </div>  
+
+            <div class="team-content">
+              <div class="team-front">
+                <h4>马老师</h4>
+                <p class="text-primary">指导老师</p>
+              </div>
+
+              <div class="team-back">
+                <div class="team-socials">
+                  <a href="#"> <i class="fab fa-facebook"></i></a>
+                  <a href="#"> <i class="fab fa-twitter"></i></a>
+                  <a href="#"> <i class="fab fa-instagram"></i></a>
+                  <a href="#"> <i class="fab fa-linkedin"></i></a>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="col-xl-4 col-md-6 col-sm-12">
+          <div class="team-item mb-4 wow pulse team-style-2" data-wow-delay="300ms">
+            <div class="img-box">
+              <img src="assets/images/team/team-2.jpg" alt="team-image" class="img-fluid">
+            </div> 
+            <div class="team-content">
+              <div class="team-front">
+                <h4>小杭</h4>
+                <p class="text-primary">数据分析师</p>
+              </div>
+
+              <div class="team-back">
+                <div class="team-socials">
+                  <a href="#"> <i class="fab fa-facebook"></i></a>
+                  <a href="#"> <i class="fab fa-twitter"></i></a>
+                  <a href="#"> <i class="fab fa-instagram"></i></a>
+                  <a href="#"> <i class="fab fa-linkedin"></i></a>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        
+
+        <div class="col-xl-4 col-md-6 col-sm-12">
+          <div class="team-item mb-4 wow pulse team-style-2"  data-wow-delay="500ms">
+            <div class="img-box">
+              <img src="assets/images/team/team-3.jpg" alt="team-image" class="img-fluid">
+            </div>  
+
+            <div class="team-content">
+              <div class="team-front">
+                <h4>小陈</h4>
+                <p class="text-primary">后台开发</p>
+              </div>
+
+              <div class="team-back">
+                <div class="team-socials">
+                  <a href="#"> <i class="fab fa-facebook"></i></a>
+                  <a href="#"> <i class="fab fa-twitter"></i></a>
+                  <a href="#"> <i class="fab fa-instagram"></i></a>
+                  <a href="#"> <i class="fab fa-linkedin"></i></a>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+         <div class="col-xl-4 col-md-6 col-sm-12">
+          <div class="team-item mb-4 wow pulse team-style-2" data-wow-delay="300ms">
+            <div class="img-box">
+              <img src="assets/images/team/team-4.jpg" alt="team-image" class="img-fluid">
+            </div> 
+            <div class="team-content">
+              <div class="team-front">
+                <h4>阿蔡</h4>
+                <p class="text-primary">前端开发</p>
+              </div>
+
+              <div class="team-back">
+                <div class="team-socials">
+                  <a href="#"> <i class="fab fa-facebook"></i></a>
+                  <a href="#"> <i class="fab fa-twitter"></i></a>
+                  <a href="#"> <i class="fab fa-instagram"></i></a>
+                  <a href="#"> <i class="fab fa-linkedin"></i></a>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+         <div class="col-xl-4 col-md-6 col-sm-12">
+          <div class="team-item mb-4 wow pulse team-style-2" data-wow-delay="300ms">
+            <div class="img-box">
+              <img src="assets/images/team/team-5.jpg" alt="team-image" class="img-fluid">
+            </div> 
+            <div class="team-content">
+              <div class="team-front">
+                <h4>小柴</h4>
+                <p class="text-primary">前端开发</p>
+              </div>
+
+              <div class="team-back">
+                <div class="team-socials">
+                  <a href="#"> <i class="fab fa-facebook"></i></a>
+                  <a href="#"> <i class="fab fa-twitter"></i></a>
+                  <a href="#"> <i class="fab fa-instagram"></i></a>
+                  <a href="#"> <i class="fab fa-linkedin"></i></a>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+  <!-- Team Section End -->
+
+  <section class="mybg research pt-105 pb-80 section">
+    <div class="container">
+      <div class="row align-items-center">
+          <div class="col-xl-6 col-lg-12 " >
+            <div class="research-content2" >
+                <div class="section-heading mb-35">
+                  <span class="text-primary text-uppercase mb-10 d-inline-block wow fadeInUp" data-wow-delay=".2s">团队资料</span>
+                  <h2 class="mb-20 wow fadeInUp" data-wow-delay=".2s">e路通行团队</h2>
+                 
+                  <p class="wow fadeInUp" data-wow-delay=".2s">我们是来自杭州电子科技大学的专业团队，由五名计算机专业学生与一名专业指导老师组成。我们致力于开发出更好的系统。</p>
+                </div>
+
+                <ul class="list-unstyled mb-40 icon-list wow fadeInUp" data-wow-delay=".3s" >
+                  <li><i class="flaticon flaticon-check"></i>队员平均专业绩点排名年级前30%. </li>
+                  <li><i class="flaticon flaticon-check"></i>成员平均参与实战开发项目数量≥10</li>
+                  <li><i class="flaticon flaticon-check"></i>团队配备专业前、后端开发工程师、算法研究员、模型分析师.</li>
+                </ul>
+
+                
+            </div>
+          </div>
+
+          <div class="col-xl-6 col-lg-12">
+            <div class="row align-items-center">
+              <div class="col-xl-6 col-lg-6 col-sm-6">
+                <div class="counter-item mb-30 counter-style-2 mt-5">
+                  <div class="icon">
+                    <i class="flaticon flaticon-handshake"></i>
+                  </div>
+                  <div class="counter-content">
+                    <h2><span class="count">20</span>+</h2>
+                    <p>参与项目</p>
+                  </div>
+                </div>
+                <div class="counter-item mb-30 counter-style-2">
+                  <div class="icon">
+                    <i class="flaticon flaticon-connection"></i>
+                  </div>
+                  <div class="counter-content">
+                    <h2><span class="count">5000</span>+</h2>
+                    <p>知识储备</p>
+                  </div>
+                </div>
+              </div>
+
+              <div class="col-xl-6 col-lg-6 col-sm-6">
+                <div class="counter-item mb-30 counter-style-2 ">
+                  <div class="icon">
+                    <i class="flaticon flaticon-happy"></i>
+                  </div>
+                  <div class="counter-content">
+                    <h2><span class="count">90%</span>k+</h2>
+                    <p>客户满意程度</p>
+                  </div>
+                </div>
+
+                <div class="counter-item mb-30 counter-style-2">
+                  <div class="icon">
+                    <i class="flaticon flaticon-data-scientist"></i>
+                  </div>
+                  <div class="counter-content">
+                    <h2><span class="count">90%</span>+</h2>
+                    <p>专业能力</p>
+                  </div>
+                </div>
+              </div>
+            </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Research Section End -->
+        </div>
+      </section>
+
+  <!-- Divider start -->
+  <div class="container">
+    <div class="row">
+      <div class="col-lg-12">
+        <hr class="divider">
+      </div>
+    </div>
+  </div>
+  <!-- Divider End -->
+
+  <!-- Counter section start -->
+ 
+  <!-- Counter section End -->
+
+    <!-- Clients Section Start -->
+   
+
+<!-- Footer Start -->
+<!--
+<footer class="footer footer-2 pt-130">
+  <div class="footer-top">
+    <div class="container">
+      <div class="row">
+          <div class="col-xl-3 col-md-6 col-sm-6">
+            <div class="footer-widget mb-5 mb-xl-0">
+              <div class="footer-logo">
+                <img src="assets/images/logo-light.png" alt="" class="img-fluid">
+              </div>
+              <p>Duis porta, ligula rhoncus euismod pretium, nisi tellus eleifend odio.</p>
+                <div class="subscribe-form">
+                  <form action="#" class="sub-form">
+                      <input type="text" class="form-control" placeholder="Enter your email">
+                      <a href="#"><i class="flaticon flaticon-paper-plane"></i></a>
+                  </form>
+              </div>
+            </div>
+          </div>
+
+          <div class="col-xl-3 col-md-6 col-sm-6">
+            <div class="footer-widget mb-5 mb-xl-0 pl-xl-3">
+              <h3>Quick Links</h3>
+
+              <ul class="list-unstyled">
+                <li><a href="#">About Company</a></li>
+                <li><a href="#">Company History</a></li>
+                <li><a href="#">Services</a></li>
+                <li><a href="#">Terms & Conditions</a></li>
+              </ul>
+            </div>
+          </div>
+
+          <div class="col-xl-2 col-md-6 col-sm-6">
+            <div class="footer-widget mb-5 mb-xl-0">
+              <h3>Support</h3>
+
+              <ul class="list-unstyled">
+                <li><a href="#">Contact Info</a></li>
+                <li><a href="#">Forum</a></li>
+                <li><a href="#">Legal</a></li>
+                <li><a href="#">Chat</a></li>
+              </ul>
+            </div>
+          </div>
+
+          <div class="col-xl-3 col-md-6 col-sm-6 offset-xl-1 col-lg-5">
+            <div class="footer-widget mb-5 mb-xl-0">
+              <h3>Contact</h3>
+
+              <ul class="list-unstyled">
+                <li><strong>Address:</strong> 147/28, New jursey area
+                  NY-5604</li>
+                <li><a href=""><strong>Email:</strong> example@gmail.com</a></li>
+                <li><a href="#"><strong>Phone:</strong> +1 336 998 1443</a></li>
+              </ul>
+            </div>
+          </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="footer-copyright">
+    <div class="container">
+      <div class="row">
+        <div class="col-xl-6 col-sm-6">
+          
+
+        <div class="col-xl-6 col-sm-6">
+          <div class="footer-socials text-center text-xl-right">
+            <a href="#"><i class="flaticon flaticon-facebook"></i></a>
+            <a href="#"><i class="flaticon flaticon-instagram"></i></a>
+            <a href="#"><i class="flaticon flaticon-twitter"></i></a>
+            <a href="#"><i class="flaticon flaticon-linkedin"></i></a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</footer>
+-->
+<!-- Footer ENd -->
+<div class="fixed-btm-top">
+	<a href="#home" class="smoth-scroll scroll-to-top bg-shadow"><i class="fa fa-angle-up"></i></a>
+</div>
+
+
+
+    <!-- Main Jquery Files -->
+    <script src="assets/js/jquery-3.5.1.min.js"></script>
+    <script src="assets/js/popper.min.js"></script>
+    <script src="assets/js/bootstrap.min.js"></script>
+    <!-- Vendors Plugins js -->
+    <script src="assets/vendor/slick/slick.min.js"></script>
+    <script src="assets/vendor/venobox/venobox.js"></script>
+    <script src="assets/vendor/animation/tilt.js"></script>
+    <script src="assets/vendor/animation/wow.min.js"></script>
+
+    <script src="assets/vendor/counterup/jquery.waypoints.min.js"></script>
+    <script src="assets/vendor/counterup/jquery.counterup.min.js"></script>
+
+    <script src="http://www.google.cn/maps/api/js?sensor=false&libraries=geometry&v=3.22&key=AIzaSyChs2QWiAhnzz0a4OEhzqCXwx_qA9ST_lE"></script>
+    <script src="assets/js/map.js"></script>
+    
+    <!-- Main Script js -->
+    <script src="assets/js/scripts.js"></script>
+
+  </body>
+</html>

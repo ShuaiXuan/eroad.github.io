@@ -1,0 +1,282 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>3号线</title>
+    <script src="echarts.min.js"></script>
+</head>
+<body>
+    <div id="chart3" style="width:500px;height:1100px;position: fixed;left: 0%;"></div>
+</body>
+<script type="text/javascript">
+
+var chartDom = document.getElementById('chart3');
+var myChart = echarts.init(chartDom);
+var option;
+
+option = {
+    backgroundColor:'',
+    tooltip: {
+        trigger: 'axis',
+        axisPointer: {            
+            type: 'shadow'      
+        }
+    },
+    legend: {
+        data: ['净人数', '出站人数', '入站人数'],
+        textStyle:{
+    color:function(params){
+    }
+}
+    },
+    grid: {
+        left: '3%',
+        right: '4%',
+        bottom: '3%',
+        containLabel: true
+    },
+    xAxis: [
+        {
+            type: 'value'
+        }
+    ],
+    yAxis: [
+        {
+            type: 'category',
+            axisTick: {
+                show: false
+            },
+            data: ['155站',
+'143站',
+'156站',
+'61站',
+'50站',
+'119站',
+'66站',
+'12站',
+'161站',
+'21站',
+'133站',
+'22站',
+'138站',
+'41站',
+'30站',
+'67站',
+'144站',
+'5站',
+'98站',
+'29站',
+'126站',
+'40站',
+'131站',
+'39站',
+'100站',
+'167站',
+'113站',
+'141站',
+'142站',
+'158站',
+'44站',
+'117站',
+'147站',
+'42站',
+'35站',
+'109站',
+'33站',
+'112站',
+'153站',
+'125站',
+'121站',
+'11站']
+        }
+    ],
+    series: [
+        {
+            name: '净人数',
+            type: 'bar',
+            label: {
+                show: true,
+                position: 'inside',
+                color:'white'
+            },
+            itemStyle:{
+                    normal:{
+                            color:'#e9aa00'
+                    }
+            },
+            emphasis: {
+                focus: 'series'
+            },
+            data: [87,
+57,
+-175,
+-401,
+130,
+157,
+12,
+742,
+-320,
+94,
+231,
+281,
+-128,
+271,
+-1476,
+7,
+385,
+-404,
+-127,
+174,
+-3237,
+754,
+-116,
+278,
+-69,
+125,
+-101,
+-185,
+254,
+-281,
+146,
+93,
+87,
+-374,
+-262,
+-445,
+81,
+387,
+190,
+-50,
+9,
+6]
+        },
+        {
+            name: '入站人数',
+            type: 'bar',
+            stack: '总量',
+            label: {
+                show: true,
+                position: 'right',
+                color:'white'
+            },
+            itemStyle:{
+                    normal:{
+                            color:'#f9504a'
+                    }
+            },
+            emphasis: {
+                focus: 'series'
+            },
+            data: [3507,
+2122,
+2515,
+5682,
+1454,
+2242,
+1377,
+3761,
+1470,
+1789,
+1533,
+4946,
+4251,
+6617,
+14595,
+11376,
+3198,
+14575,
+5191,
+4779,
+37794,
+12771,
+4136,
+2787,
+6880,
+3889,
+1747,
+6658,
+6395,
+4245,
+3190,
+1648,
+883,
+5699,
+3472,
+2618,
+659,
+2197,
+1103,
+2791,
+3500,
+1066]
+        },
+        {
+            name: '出站人数',
+            type: 'bar',
+            stack: '总量',
+            label: {
+                show: true,
+                position: 'left',
+                color:'white'
+            },
+            itemStyle:{
+                    normal:{
+                            color:'#53bf18'
+                    }
+            },
+            emphasis: {
+                focus: 'series'
+            },
+            data: [-3420,
+-2065,
+-2690,
+-6083,
+-1324,
+-2085,
+-1365,
+-3019,
+-1790,
+-1695,
+-1302,
+-4665,
+-4379,
+-6346,
+-16071,
+-11369,
+-2813,
+-14979,
+-5318,
+-4605,
+-41031,
+-12017,
+-4252,
+-2509,
+-6949,
+-3764,
+-1848,
+-6843,
+-6141,
+-4526,
+-3044,
+-1555,
+-796,
+-6073,
+-3734,
+-3063,
+-578,
+-1810,
+-913,
+-2841,
+-3491,
+-1060]
+        }
+    ]
+};
+
+option && myChart.setOption(option);
+
+
+</script>
+</html>

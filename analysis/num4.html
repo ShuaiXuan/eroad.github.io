@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>4号线</title>
+    <script src="echarts.min.js"></script>
+</head>
+<body>
+    <div id="chart4" style="width:700px;height:250px;position: fixed;left: 0%;"></div>
+</body>
+<script type="text/javascript">
+
+var chartDom = document.getElementById('chart4');
+var myChart = echarts.init(chartDom);
+var option;
+
+option = {
+    backgroundColor:'',
+    tooltip: {
+        trigger: 'axis',
+        axisPointer: {            
+            type: 'shadow'        
+        }
+    },
+    legend: {
+        data: ['净人数', '出站人数', '入站人数'],
+        textStyle:{
+    color:function(params){
+    }
+}
+    
+    },
+    grid: {
+        left: '3%',
+        right: '4%',
+        bottom: '3%',
+        containLabel: true
+    },
+    xAxis: [
+        {
+            type: 'value'
+        }
+    ],
+    yAxis: [
+        {
+            type: 'category',
+            axisTick: {
+                show: false
+            },
+            data: ['84站',
+'59站',
+'19站',
+'62站',
+'165站',
+'58站',
+'38站']
+        }
+    ],
+    series: [
+        {
+            name: '净人数',
+            type: 'bar',
+            label: {
+                show: true,
+                position: 'inside',
+                color:'white'
+            },
+            emphasis: {
+                focus: 'series'
+            },
+            data: [-243,
+55,
+-20,
+57,
+-33,
+6,
+-6]
+        },
+        {
+            name: '入站人数',
+            type: 'bar',
+            stack: '总量',
+            label: {
+                show: true,
+                position: 'right',
+                color:'white'
+            },
+            emphasis: {
+                focus: 'series'
+            },
+            data: [3585,
+1620,
+448,
+499,
+300,
+173,
+477]
+        },
+        {
+            name: '出站人数',
+            type: 'bar',
+            stack: '总量',
+            label: {
+                show: true,
+                position: 'left',
+                color:'white'
+            },
+            emphasis: {
+                focus: 'series'
+            },
+            data: [-3828,
+-1565,
+-468,
+-442,
+-333,
+-167,
+-483]
+        }
+    ]
+};
+
+option && myChart.setOption(option);
+
+
+</script>
+</html>

@@ -1,0 +1,287 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>地铁人流量预测分析——全员饿人</title>
+    <link rel="stylesheet" href="css/index.css">
+    <meta name="description" content="" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+
+    <meta property="og:title" content="" />
+    <meta property="og:type" content="" />
+    <meta property="og:url" content="" />
+    <meta property="og:image" content="" />
+
+    
+    <link rel="apple-touch-icon" href="icon.png" />
+    <!-- Place favicon.ico in the root directory -->
+
+    <!-- Bootstrap css -->
+    <link rel="stylesheet" href="assets/css/bootstrap.min.css" />
+    <!-- Vendors Plugins -->
+    <link rel="stylesheet" href="assets/vendor/fontawesome/css/all.css" />
+    <link rel="stylesheet" href="assets/vendor/slick/slick-theme.css" />
+    <link rel="stylesheet" href="assets/vendor/slick/slick.css" />
+    <link rel="stylesheet" href="assets/vendor/animation/animate.css" />
+    <link rel="stylesheet" href="assets/vendor/venobox/venobox.css" />
+    <link rel="stylesheet" href="assets/vendor/flaticon/flaticon.css" />
+    <link rel="stylesheet" href="assets/vendor/arrow-font/flaticon.css" />
+    <!-- style css -->
+    <link rel="stylesheet" href="assets/css/style.css" />
+    <!-- responsive css -->
+    <link rel="stylesheet" href="assets/css/responsive.css" />
+    <script src="https://libs.baidu.com/jquery/1.9.1/jquery.js"></script>
+    <meta name="theme-color" content="#fafafa" />
+    <meta http-equiv="X-UA-Compatible" content="IE=Edge，chrome=1">
+    <meta name="renderer" content="webkit">
+    <link rel="stylesheet" type="text/css" href="http://apps.bdimg.com/libs/bootstrap/3.3.4/css/bootstrap.css">
+    <link rel="stylesheet" href="asset/css/index.css"/>
+    <style >
+        .iframesides{      
+                 
+            transform:scale(0.78,1);
+            transform-origin: 0 50%;      
+           
+         }
+         .iframe-mid-fi{
+            transform:scale(0.89,1);
+            transform-origin: 0 50%;
+         }
+         .iframe-mid-se{
+            transform:scale(0.89,1);
+            transform-origin: 0 50%;
+         }
+         .se-iframe-mid{
+            transform:scale(0.95,1);
+            transform-origin: 0 50%;
+         }
+    </style>
+</head>
+<body>
+<header>
+      <!-- Main Menu Start -->
+      <div class="site-navigation menu-transparent" id="mainmenu-area">
+        <nav class="po navbar navbar-expand-lg navbar-light  navbar-floating">
+        <div>
+        <a class="navbar-brand" href="index.html">
+              <img src="assets/images/logo-light.png" width="80%" height="80%" alt="Dexon" class="img-fluid" />
+        </a>
+        </div>
+          <div class="ri container">
+            <!-- Collapse -->
+            <div class="collapse navbar-collapse  mainmenu" id="navbarMenu">
+              <ul class="navbar-nav mx-auto ">
+                <li class="nav-item ">
+                  <a class="nav-link " href="index.html" >
+                      主页
+                  </a>
+                </li>
+
+                <li class="nav-item">
+                  <a href="index-e.html" class="nav-link "> 实时人流量 </a>
+                </li>
+
+                <li class="nactive">
+                  <a href="index-line.html" class="nav-link active"> 线路人流量 </a>
+                </li>
+
+                <li class="nav-item">
+                  <a href="contact.html" class="nav-link"> 联系我们 </a>
+                </li>
+              </ul>
+            </div>
+            <!-- / .navbar-collapse -->
+          </div>
+          <!-- / .container -->
+
+        </nav>
+      </div>
+    </header>
+    
+
+    <div class="header">
+        19年十二月~20年六月线路总人流量
+        <div class="header1-time">
+            <span id="time"></span>
+    </div>
+    </div>
+
+<div class="main clearfix">
+    <div class="main-left"><!--左边-->
+        <div class="border-container">
+            <div class="name-title">
+                3号线
+            </div>
+            <!--<div id="radar"></div>-->
+            <iframe id="framesidesid" class="iframesides" src="analysis/num3.html" frameborder="0" scrolling="no"></iframe>
+            <!--画四个角-->
+            <span class="top-left border-span"></span>
+            <span class="top-right border-span"></span>
+            <span class="bottom-left border-span"></span>
+            <span class="bottom-right border-span"></span>
+        </div>
+        
+    </div>
+    <div class="main-middle">
+        <div class="border-container">
+             <div class="name-title">
+                1号线
+            </div>
+            <iframe id="frame-mid-fi-id" class="iframe-mid-fi"  src="analysis/num1.html" frameborder="0" scrolling="no"></iframe>
+            <div class="number-show">
+                <ul>
+                    <li>
+                        <span class="span-name"></span>
+                    </li>
+                    <li>
+                        <span class="span-number-show"></span>
+                    </li>
+                    <li>
+                        <span class="span-name"></span>
+                    </li>
+                    <li>
+                        <span class="span-number-show"></span>
+                    </li>
+                    <li>
+                        <span class="span-name"></span>
+                    </li>
+                    <li>
+                        <span class="span-number-show"></span>
+                    </li>
+                </ul>
+            </div>
+            <span class="top-left border-span"></span>
+            <span class="top-right border-span"></span>
+            <span class="bottom-left border-span"></span>
+            <span class="bottom-right border-span"></span>
+        </div>
+        <div class="border-container">
+            <div class="name-title">
+                4号线
+            </div>
+            <ul class="teacher-pie clearfix">
+               <iframe id="frame-mid-se-id" class="iframe-mid-se" style="margin-left: -10px;" src="analysis/num4.html" frameborder="0" scrolling="no"></iframe>
+            </ul>
+
+            <div class="name-title">
+                5号线
+            </div>
+
+            <iframe id="frame-mid-se-id" class="iframe-mid-se" style="margin-left: -20px;" src="analysis/num5.html" frameborder="0" scrolling="no"></iframe>
+            <span class="top-left border-span"></span>
+            <span class="top-right border-span"></span>
+            <span class="bottom-left border-span"></span>
+            <span class="bottom-right border-span"></span>
+        </div>
+    </div>
+    <div class="main-right">
+        <div class="border-container">
+            <div class="name-title">
+                11号线
+            </div>
+            <iframe id="framesidesid" class="iframesides" src="analysis/num11.html" frameborder="0" scrolling="no"></iframe>
+           
+            <span class="top-left border-span"></span>
+            <span class="top-right border-span"></span>
+            <span class="bottom-left border-span"></span>
+            <span class="bottom-right border-span"></span>
+        </div>
+    </div>
+</div>
+
+<!--new-->
+<div class="main clearfix">
+    <div class="main-left-se"><!--左边-->
+        <div class="border-container">
+            <div class="name-title">
+                2号线
+            </div>
+            <iframe id="se-frame-mid-id" class="se-iframe-mid"  src="analysis/num2.html" frameborder="0" scrolling="no"></iframe>
+            <!--画四个角-->
+            <span class="top-left border-span"></span>
+            <span class="top-right border-span"></span>
+            <span class="bottom-left border-span"></span>
+            <span class="bottom-right border-span"></span>
+        </div>
+    </div>
+    <div class="main-middle-se">
+        <div class="border-container">
+             <div class="name-title">
+                12号线
+            </div>
+            <iframe id="se-frame-mid-id" class="se-iframe-mid"  src="analysis/num12.html" frameborder="0" scrolling="no"></iframe>
+            <span class="top-left border-span"></span>
+            <span class="top-right border-span"></span>
+            <span class="bottom-left border-span"></span>
+            <span class="bottom-right border-span"></span>
+        </div>
+    </div>
+
+    <div class="main-right-se">
+        <div class="border-container">
+            <div class="name-title">
+                10号线
+            </div>
+            <iframe id="se-frame-mid-id" class="se-iframe-mid"  src="analysis/num10.html" frameborder="0" scrolling="no"></iframe>
+
+            <span class="top-left border-span"></span>
+            <span class="top-right border-span"></span>
+            <span class="bottom-left border-span"></span>
+            <span class="bottom-right border-span"></span>
+        </div>
+    </div>
+</div>
+
+
+    <script src="assets/js/jquery-3.5.1.min.js"></script>
+    <script src="assets/js/popper.min.js"></script>
+    <script src="assets/js/bootstrap.min.js"></script>
+    <!-- Vendors Plugins js -->
+    <script src="assets/vendor/slick/slick.min.js"></script>
+    <script src="assets/vendor/venobox/venobox.js"></script>
+    <script src="assets/vendor/animation/tilt.js"></script>
+    <script src="assets/vendor/animation/wow.min.js"></script>
+    <script src="assets/vendor/counterup/jquery.waypoints.min.js"></script>
+    <script src="assets/vendor/counterup/jquery.counterup.min.js"></script>
+    <script src="http://www.google.cn/maps/api/js?sensor=false&libraries=geometry&v=3.22&key=AIzaSyChs2QWiAhnzz0a4OEhzqCXwx_qA9ST_lE"></script>
+    <script src="assets/js/map.js"></script>
+    <script type="text/javascript">
+       function getTime(){
+        var myDate = new Date();
+        var myYear = myDate.getFullYear(); //获取完整的年份(4位,1970-????)
+        var myMonth = myDate.getMonth()+1; //获取当前月份(0-11,0代表1月)
+        var myToday = myDate.getDate(); //获取当前日(1-31)
+        var myDay = myDate.getDay(); //获取当前星期X(0-6,0代表星期天)
+        var myHour = myDate.getHours(); //获取当前小时数(0-23)
+        var myMinute = myDate.getMinutes(); //获取当前分钟数(0-59)
+        var mySecond = myDate.getSeconds(); //获取当前秒数(0-59)
+        var week = ['星期日','星期一','星期二','星期三','星期四','星期五','星期六'];
+        var nowTime;
+
+        nowTime = myYear+'年'+fillZero(myMonth)+'月'+fillZero(myToday)+'日'+'&nbsp;&nbsp;'+fillZero(myHour)+':'+fillZero(myMinute)+':'+fillZero(mySecond)+'&nbsp;&nbsp;'+week[myDay]+'&nbsp;&nbsp;';
+        //console.log(nowTime);
+        $('#time').html(nowTime);
+    };
+    function fillZero(str){
+        var realNum;
+        if(str<10){
+            realNum = '0'+str;
+        }else{
+            realNum = str;
+        }
+        return realNum;
+    }
+    setInterval(getTime,1000);
+    </script>>
+</body>
+<script src="asset/js/jquery.min.js"></script>
+<script src="asset/js/echarts.min.js"></script>
+<script src="asset/js/index.js"></script>
+<script src="asset/js/map/shandong.js"></script>
+</html>
+<!--这行代码可以删除-->
+
+<script src="js/echarts.min.js"></script>
+<script src="js/jquery.min.js"></script>
+<script type="text/javascript" src="js/china.js"></script>
+<script type="text/javascript" src="js/index.js"></script>

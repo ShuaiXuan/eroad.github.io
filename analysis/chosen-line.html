@@ -1,0 +1,1426 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8" />
+<title>标签页选择线路</title>
+<link rel="stylesheet" href="https://cdn.staticfile.org/twitter-bootstrap/3.3.7/css/bootstrap.min.css">
+<script src="https://cdn.staticfile.org/jquery/2.1.1/jquery.min.js"></script>
+<script src="https://cdn.staticfile.org/twitter-bootstrap/3.3.7/js/bootstrap.min.js"></script>
+<script type="text/javascript" src="echarts.min.js"></script>
+</head>
+<style type="text/css">
+.myTable-container {
+	width: 611px;
+	height: 500px;
+    background-color: transparent;
+}
+</style>
+<body>
+	<div class="container" style="width:611px;height:500px;position: fixed;left: 0%;">
+		<ul id="myTab" class="nav nav-tabs" role="tablist">
+			<li class="active"><a href="#tab1" data-toggle="tab">1号线</a></li>
+			<li><a href="#tab2" role="tab" data-toggle="tab">2号线</a></li>
+			<li><a href="#tab3" role="tab" data-toggle="tab">3号线 </a></li>
+            <li><a href="#tab4" role="tab" data-toggle="tab">4号线 </a></li>
+            <li><a href="#tab5" role="tab" data-toggle="tab">5号线 </a></li>
+            <li><a href="#tab10" role="tab" data-toggle="tab">10号线 </a></li>
+            <li><a href="#tab11" role="tab" data-toggle="tab">11号线 </a></li>
+            <li><a href="#tab12" role="tab" data-toggle="tab">12号线 </a></li>
+
+		</ul>
+ 
+		<div id="myTabContent" class="tab-content">
+			<div class="tab-pane  fade in active" id="tab1">
+				<div id="tab1-container" class="myTable-container"></div>
+			</div>
+			<div class="tab-pane fade" id="tab2">
+				<div id="tab2-container" class="myTable-container"></div>
+			</div>
+			<div class="tab-pane fade" id="tab3">
+				<div id="tab3-container" class="myTable-container"></div>
+			</div>
+            <div class="tab-pane fade" id="tab4">
+				<div id="tab4-container" class="myTable-container"></div>
+			</div>
+            <div class="tab-pane fade" id="tab5">
+				<div id="tab5-container" class="myTable-container"></div>
+			</div>
+            <div class="tab-pane fade" id="tab10">
+				<div id="tab10-container" class="myTable-container"></div>
+			</div>
+            <div class="tab-pane fade" id="tab11">
+				<div id="tab11-container" class="myTable-container"></div>
+			</div>
+            <div class="tab-pane fade" id="tab12">
+				<div id="tab12-container" class="myTable-container"></div>
+			</div>
+		</div>
+	</div>
+	<script>
+		var $tab1 = document.getElementById('tab1-container');
+		var $tab2 = document.getElementById('tab2-container');
+		var $tab3 = document.getElementById('tab3-container');
+        var $tab4 = document.getElementById('tab4-container');
+        var $tab5 = document.getElementById('tab5-container');
+        var $tab10 = document.getElementById('tab10-container');
+        var $tab11 = document.getElementById('tab11-container');
+        var $tab12 = document.getElementById('tab12-container');
+ 
+		
+var tab1Option = {
+            backgroundColor:'',
+    tooltip: {
+        trigger: 'axis',
+        axisPointer: {            
+            type: 'shadow'        
+        }
+    },
+    legend: {
+        data: ['净人数', '出站人数', '入站人数'],
+        
+textStyle:{
+    color:function(params){
+    }
+}
+        
+    },
+    grid: {
+        left: '3%',
+        right: '4%',
+        bottom: '3%',
+        containLabel: true
+    },
+    xAxis: [
+        {
+            type: 'value'
+        }
+    ],
+    yAxis: [
+        {
+            type: 'category',
+            axisTick: {
+                show: false
+            },
+            data: ['104站',
+'65站',
+'49站',
+'149站',
+'74站',
+'128站',
+'34站',
+'106站',
+'110站',
+'97站',
+'80站',
+'89站',
+'64站',
+'150站',
+'154站',
+'107站',
+'83站',
+'108站',
+'159站',
+'1站',
+]
+        }
+    ],
+    series: [
+        {
+            name: '净人数',
+            type: 'bar',
+            label: {
+                show: true,
+                position: 'inside'
+            },
+            itemStyle:{
+                    normal:{
+                            color:'#4ad2ff'
+                    }
+            },
+            emphasis: {
+                focus: 'series'
+            },
+            data: [2,
+308,
+-391,
+116,
+96,
+106,
+40,
+114,
+159,
+275,
+423,
+-1232,
+46,
+-42,
+148,
+500,
+554,
+-765,
+-404,
+-299
+]
+        },
+        {
+            name: '入站人数',
+            type: 'bar',
+            stack: '总量',
+            label: {
+                show: true
+            },
+            itemStyle:{
+                    normal:{
+                            color:'#fffd51'
+                    }
+            },
+            emphasis: {
+                focus: 'series'
+            },
+            data: [6900,
+6869,
+9323,
+2953,
+6028,
+1130,
+2860,
+1401,
+8499,
+2972,
+4211,
+32809,
+4212,
+567,
+4718,
+14326,
+4711,
+15370,
+3532,
+5235]
+        },
+        {
+            name: '出站人数',
+            type: 'bar',
+            stack: '总量',
+            label: {
+                show: true,
+                position: 'left'
+            },
+            itemStyle:{
+                    normal:{
+                            color:'#F2279D'
+                    }
+            },
+            emphasis: {
+                focus: 'series'
+            },
+            data: [-6898,
+-6561,
+-9714,
+-2837,
+-5932,
+-1024,
+-2820,
+-1287,
+-8340,
+-2697,
+-3788,
+-34041,
+-4166,
+-609,
+-4570,
+-13826,
+-4157,
+-16135,
+-3936,
+-5534]
+        }
+    ]
+		};		
+var tab2Option = {
+			backgroundColor:'',
+    title: {
+        text: '2号线',
+        textStyle:{
+            color:'#fff'
+        }
+    },
+    tooltip: {
+        trigger: 'axis',
+        axisPointer: {           
+            type: 'shadow'       
+        }
+    },
+    legend: {
+        data: ['净人数', '出站人数', '入站人数']
+    },
+    grid: {
+        left: '3%',
+        right: '4%',
+        bottom: '3%',
+        containLabel: true
+    },
+    xAxis: [
+        {
+            type: 'value'
+        }
+    ],
+    yAxis: [
+        {
+            type: 'category',
+            axisTick: {
+                show: false
+            },
+            data: ['51站',
+'105站',
+'24站',
+'139站',
+'71站',
+'57站',
+'76站',
+'52站',
+'68站',
+'151站',
+'48站',
+'27站',
+'81站',
+'127站',
+'123站',
+'47站',
+'18站',
+'79站',
+'78站',
+'53站',
+'163站',
+'9站',
+'129站']
+        }
+    ],
+    series: [
+        {
+            name: '净人数',
+            type: 'bar',
+            label: {
+                show: true,
+                position: 'inside'
+            },
+            emphasis: {
+                focus: 'series'
+            },
+            data: [-44,
+25,
+13,
+201,
+-133,
+117,
+-10,
+11,
+139,
+174,
+698,
+324,
+-585,
+-915,
+34,
+-603,
+-41,
+-343,
+-165,
+33,
+470,
+921,
+794]
+        },
+        {
+            name: '入站人数',
+            type: 'bar',
+            stack: '总量',
+            label: {
+                show: true
+            },
+            emphasis: {
+                focus: 'series'
+            },
+            data: [736,
+501,
+219,
+1620,
+789,
+876,
+3841,
+1764,
+3545,
+2155,
+2630,
+3437,
+10449,
+11805,
+5958,
+12481,
+863,
+5943,
+1806,
+2314,
+1918,
+12036,
+16917]
+        },
+        {
+            name: '出站人数',
+            type: 'bar',
+            stack: '总量',
+            label: {
+                show: true,
+                position: 'left'
+            },
+            emphasis: {
+                focus: 'series'
+            },
+            data: [-780,
+-476,
+-206,
+-1419,
+-922,
+-759,
+-3851,
+-1753,
+-3406,
+-1981,
+-1932,
+-3113,
+-11034,
+-12720,
+-5924,
+-13084,
+-904,
+-6286,
+-1971,
+-2281,
+-1448,
+-11115,
+-16123]
+        }
+    ]
+		};		
+var tab3Option = {
+            backgroundColor:'',
+    tooltip: {
+        trigger: 'axis',
+        axisPointer: {            
+            type: 'shadow'      
+        }
+    },
+    legend: {
+        data: ['净人数', '出站人数', '入站人数'],
+        textStyle:{
+    color:function(params){
+    }
+}
+    },
+    grid: {
+        left: '3%',
+        right: '4%',
+        bottom: '3%',
+        containLabel: true
+    },
+    xAxis: [
+        {
+            type: 'value'
+        }
+    ],
+    yAxis: [
+        {
+            type: 'category',
+            axisTick: {
+                show: false
+            },
+            data: ['155站',
+'143站',
+'156站',
+'61站',
+'50站',
+'119站',
+'66站',
+'12站',
+'161站',
+'21站',
+'133站',
+'22站',
+'138站',
+'41站',
+'30站',
+'67站',
+'144站',
+'5站',
+'98站',
+'29站',
+'126站',
+'40站',
+'131站',
+'39站',
+'100站',
+'167站',
+'113站',
+'141站',
+'142站',
+'158站',
+'44站',
+'117站',
+'147站',
+'42站',
+'35站',
+'109站',
+'33站',
+'112站',
+'153站',
+'125站',
+'121站',
+'11站']
+        }
+    ],
+    series: [
+        {
+            name: '净人数',
+            type: 'bar',
+            label: {
+                show: true,
+                position: 'inside'
+            },
+            itemStyle:{
+                    normal:{
+                            color:'#e9aa00'
+                    }
+            },
+            emphasis: {
+                focus: 'series'
+            },
+            data: [87,
+57,
+-175,
+-401,
+130,
+157,
+12,
+742,
+-320,
+94,
+231,
+281,
+-128,
+271,
+-1476,
+7,
+385,
+-404,
+-127,
+174,
+-3237,
+754,
+-116,
+278,
+-69,
+125,
+-101,
+-185,
+254,
+-281,
+146,
+93,
+87,
+-374,
+-262,
+-445,
+81,
+387,
+190,
+-50,
+9,
+6]
+        },
+        {
+            name: '入站人数',
+            type: 'bar',
+            stack: '总量',
+            label: {
+                show: true
+            },
+            itemStyle:{
+                    normal:{
+                            color:'#f9504a'
+                    }
+            },
+            emphasis: {
+                focus: 'series'
+            },
+            data: [3507,
+2122,
+2515,
+5682,
+1454,
+2242,
+1377,
+3761,
+1470,
+1789,
+1533,
+4946,
+4251,
+6617,
+14595,
+11376,
+3198,
+14575,
+5191,
+4779,
+37794,
+12771,
+4136,
+2787,
+6880,
+3889,
+1747,
+6658,
+6395,
+4245,
+3190,
+1648,
+883,
+5699,
+3472,
+2618,
+659,
+2197,
+1103,
+2791,
+3500,
+1066]
+        },
+        {
+            name: '出站人数',
+            type: 'bar',
+            stack: '总量',
+            label: {
+                show: true,
+                position: 'left'
+            },
+            itemStyle:{
+                    normal:{
+                            color:'#53bf18'
+                    }
+            },
+            emphasis: {
+                focus: 'series'
+            },
+            data: [-3420,
+-2065,
+-2690,
+-6083,
+-1324,
+-2085,
+-1365,
+-3019,
+-1790,
+-1695,
+-1302,
+-4665,
+-4379,
+-6346,
+-16071,
+-11369,
+-2813,
+-14979,
+-5318,
+-4605,
+-41031,
+-12017,
+-4252,
+-2509,
+-6949,
+-3764,
+-1848,
+-6843,
+-6141,
+-4526,
+-3044,
+-1555,
+-796,
+-6073,
+-3734,
+-3063,
+-578,
+-1810,
+-913,
+-2841,
+-3491,
+-1060]
+        }
+    ]
+		};
+var tab4Option = {
+    backgroundColor:'',
+    tooltip: {
+        trigger: 'axis',
+        axisPointer: {            
+            type: 'shadow'        
+        }
+    },
+    legend: {
+        data: ['净人数', '出站人数', '入站人数'],
+        textStyle:{
+    color:function(params){
+    }
+}
+    
+    },
+    grid: {
+        left: '3%',
+        right: '4%',
+        bottom: '3%',
+        containLabel: true
+    },
+    xAxis: [
+        {
+            type: 'value'
+        }
+    ],
+    yAxis: [
+        {
+            type: 'category',
+            axisTick: {
+                show: false
+            },
+            data: ['84站',
+'59站',
+'19站',
+'62站',
+'165站',
+'58站',
+'38站']
+        }
+    ],
+    series: [
+        {
+            name: '净人数',
+            type: 'bar',
+            label: {
+                show: true,
+                position: 'inside'
+            },
+            emphasis: {
+                focus: 'series'
+            },
+            data: [-243,
+55,
+-20,
+57,
+-33,
+6,
+-6]
+        },
+        {
+            name: '入站人数',
+            type: 'bar',
+            stack: '总量',
+            label: {
+                show: true
+            },
+            emphasis: {
+                focus: 'series'
+            },
+            data: [3585,
+1620,
+448,
+499,
+300,
+173,
+477]
+        },
+        {
+            name: '出站人数',
+            type: 'bar',
+            stack: '总量',
+            label: {
+                show: true,
+                position: 'left'
+            },
+            emphasis: {
+                focus: 'series'
+            },
+            data: [-3828,
+-1565,
+-468,
+-442,
+-333,
+-167,
+-483]
+        }
+    ]
+};
+var tab5Option = {
+    backgroundColor:'',
+    title: {
+        text: '5号线',
+        textStyle:{
+            color:'#fff'
+        }
+    },
+    tooltip: {
+        trigger: 'axis',
+        axisPointer: {         
+            type: 'shadow'        
+        }
+    },
+    legend: {
+        data: [,'净人数', '出站人数', '入站人数'],
+        textStyle:{
+    color:function(params){
+    }
+}
+    },
+    grid: {
+        left: '3%',
+        right: '4%',
+        bottom: '3%',
+        containLabel: true
+    },
+    xAxis: [
+        {
+            type: 'value'
+        }
+    ],
+    yAxis: [
+        {
+            type: 'category',
+            axisTick: {
+                show: false
+            },
+            data: ['54站',
+'69站',
+'16站',
+'37站',
+'132站',
+'96站',
+'10站',
+'43站']
+        }
+    ],
+    series: [
+        {
+            name: '净人数',
+            type: 'bar',
+            label: {
+                show: true,
+                position: 'inside'
+            },
+            itemStyle:{
+                    normal:{
+                            color:'#99CCF0'
+                    }
+            },
+            emphasis: {
+                focus: 'series'
+            },
+            data: [88,
+-26,
+74,
+-234,
+75,
+222,
+28,
+-64]
+        },
+        {
+            name: '入站人数',
+            type: 'bar',
+            stack: '总量',
+            label: {
+                show: true
+            },
+            itemStyle:{
+                    normal:{
+                            color:'#E89DE4'
+                    }
+            },
+            emphasis: {
+                focus: 'series'
+            },
+            data: [6955,
+4946,
+1488,
+3028,
+3983,
+1386,
+379,
+1183]
+        },
+        {
+            name: '出站人数',
+            type: 'bar',
+            stack: '总量',
+            label: {
+                show: true,
+                position: 'left'
+            },
+            itemStyle:{
+                    normal:{
+                            color:'#F57056'
+                    }
+            },
+            emphasis: {
+                focus: 'series'
+            },
+            data: [-6867,
+-4972,
+-1414,
+-3262,
+-3908,
+-1164,
+-351,
+-1247]
+        }
+    ]
+};
+var tab10Option = {
+    backgroundColor:'',
+    title: {
+        text: '10号线',
+        textStyle:{
+            color:'#fff'
+        }
+    },
+    tooltip: {
+        trigger: 'axis',
+        axisPointer: {           
+            type: 'shadow'        
+        }
+    },
+    legend: {
+        data: [,'净人数', '出站人数', '入站人数']
+    },
+    grid: {
+        left: '3%',
+        right: '4%',
+        bottom: '3%',
+        containLabel: true
+    },
+    xAxis: [
+        {
+            type: 'value'
+        }
+    ],
+    yAxis: [
+        {
+            type: 'category',
+            axisTick: {
+                show: false
+            },
+            data: ['157站',
+'114站',
+'168站',
+'135站',
+'134站',
+'85站',
+'2站',
+'4站',
+'103站',
+'145站',
+'88站',
+'87站',
+'94站',
+'160站',
+'7站',
+'6站',
+'8站',
+'75站',
+'102站']
+        }
+    ],
+    series: [
+        {
+            name: '净人数',
+            type: 'bar',
+            label: {
+                show: true,
+                position: 'inside'
+            },
+            emphasis: {
+                focus: 'series'
+            },
+            data: [-227,
+-255,
+-99,
+-382,
+8178,
+-9,
+-81,
+-103,
+-74,
+-47,
+-622,
+48,
+-336,
+296,
+34,
+-205,
+237,
+91,
+-58]
+        },
+        {
+            name: '入站人数',
+            type: 'bar',
+            stack: '总量',
+            label: {
+                show: true
+            },
+            emphasis: {
+                focus: 'series'
+            },
+            data: [3135,
+5988,
+3490,
+5923,
+26232,
+3100,
+1234,
+1879,
+1274,
+741,
+8143,
+6758,
+2333,
+3927,
+1051,
+760,
+930,
+1138,
+216]
+        },
+        {
+            name: '出站人数',
+            type: 'bar',
+            stack: '总量',
+            label: {
+                show: true,
+                position: 'left'
+            },
+            emphasis: {
+                focus: 'series'
+            },
+            data: [-3362,
+-6243,
+-3589,
+-6305,
+-18054,
+-3109,
+-1315,
+-1982,
+-1348,
+-788,
+-8765,
+-6710,
+-2669,
+-3631,
+-1017,
+-965,
+-693,
+-1047,
+-274]
+        }
+    ]
+};
+var tab11Option = {
+    backgroundColor:'',
+    tooltip: {
+        trigger: 'axis',
+        axisPointer: {            
+            type: 'shadow'        
+        }
+    },
+    legend: {
+        data: [,'净人数', '出站人数', '入站人数'],
+        textStyle:{
+    color:function(params){
+    }
+}
+    },
+    grid: {
+        left: '3%',
+        right: '4%',
+        bottom: '3%',
+        containLabel: true
+    },
+    xAxis: [
+        {
+            type: 'value'
+        }
+    ],
+    yAxis: [
+        {
+            type: 'category',
+            axisTick: {
+                show: false
+            },
+            data: ['28站',
+'124站',
+'99站',
+'166站',
+'36站',
+'122站',
+'77站',
+'140站',
+'111站',
+'13站',
+'70站',
+'55站',
+'20站',
+'23站',
+'56站',
+'118站',
+'115站',
+'162站',
+'15站',
+'86站',
+'46站',
+'63站',
+'3站',
+'25站',
+'146站',
+'130站',
+'120站',
+'82站',
+'164站',
+'152站',
+'45站']
+        }
+    ],
+    series: [
+        {
+            name: '净人数',
+            type: 'bar',
+            label: {
+                show: true,
+                position: 'inside'
+            },
+            itemStyle:{
+                    normal:{
+                            color:'#fff'
+                    }
+            },
+            emphasis: {
+                focus: 'series'
+            },
+            data: [137,
+-126,
+-37,
+79,
+43,
+-68,
+67,
+-136,
+0,
+110,
+458,
+-103,
+-477,
+-3,
+-316,
+633,
+-559,
+302,
+405,
+-440,
+-1079,
+-3879,
+-1216,
+234,
+403,
+209,
+284,
+134,
+-9,
+-114,
+63]
+        },
+        {
+            name: '入站人数',
+            type: 'bar',
+            stack: '总量',
+            label: {
+                show: true
+            },
+            itemStyle:{
+                    normal:{
+                            color:'#4ad2ff'
+                    }
+            },
+            emphasis: {
+                focus: 'series'
+            },
+            data: [4597,
+1551,
+5118,
+636,
+1780,
+5519,
+884,
+906,
+1527,
+1238,
+4611,
+4681,
+14510,
+10116,
+6993,
+9386,
+18189,
+8894,
+4179,
+6143,
+3626,
+32239,
+1546,
+4545,
+7465,
+3856,
+4590,
+1821,
+361,
+681,
+344]
+        },
+        {
+            name: '出站人数',
+            type: 'bar',
+            stack: '总量',
+            label: {
+                show: true,
+                position: 'left'
+            },
+            itemStyle:{
+                    normal:{
+                            color:'#E6D998'
+                    }
+            },
+            emphasis: {
+                focus: 'series'
+            },
+            data: [-4460,
+-1677,
+-5155,
+-557,
+-1737,
+-5587,
+-817,
+-1042,
+-1527,
+-1128,
+-4153,
+-4784,
+-14987,
+-10119,
+-7309,
+-8753,
+-18748,
+-8592,
+-3774,
+-6583,
+-4705,
+-36118,
+-2762,
+-4311,
+-7062,
+-3647,
+-4306,
+-1687,
+-370,
+-795,
+-281]
+        }
+    ]
+};
+var tab12Option = {
+    backgroundColor:'',
+    title: {
+        text: '12号线',
+        textStyle:{
+            color:'#fff'
+        }
+    },
+    tooltip: {
+        trigger: 'axis',
+        axisPointer: {            
+            type: 'shadow'        
+        }
+    },
+    legend: {
+        data: [,'净人数', '出站人数', '入站人数']
+    },
+    grid: {
+        left: '3%',
+        right: '4%',
+        bottom: '3%',
+        containLabel: true
+    },
+    xAxis: [
+        {
+            type: 'value'
+        }
+    ],
+    yAxis: [
+        {
+            type: 'category',
+            axisTick: {
+                show: false
+            },
+            data: ['14站',
+'73站',
+'148站',
+'60站',
+'91站',
+'32站',
+'116站',
+'31站',
+'92站',
+'93站',
+'72站',
+'95站',
+'90站',
+'26站',
+'17站',
+'101站',
+'136站',
+'137站']
+        }
+    ],
+    series: [
+        {
+            name: '净人数',
+            type: 'bar',
+            label: {
+                show: true,
+                position: 'inside'
+            },
+            emphasis: {
+                focus: 'series'
+            },
+            data: [-207,
+2,
+231,
+50,
+134,
+178,
+-14,
+340,
+72,
+210,
+-458,
+620,
+-337,
+-90,
+-54,
+57,
+54,
+92]
+        },
+        {
+            name: '入站人数',
+            type: 'bar',
+            stack: '总量',
+            label: {
+                show: true
+            },
+            emphasis: {
+                focus: 'series'
+            },
+            data: [2410,
+1353,
+2262,
+1074,
+1905,
+2732,
+68,
+4286,
+2586,
+2219,
+4237,
+5720,
+4473,
+2060,
+6076,
+1862,
+5728,
+3373]
+        },
+        {
+            name: '出站人数',
+            type: 'bar',
+            stack: '总量',
+            label: {
+                show: true,
+                position: 'left'
+            },
+            emphasis: {
+                focus: 'series'
+            },
+            data: [-2617,
+-1351,
+-2031,
+-1024,
+-1771,
+-2554,
+-82,
+-3946,
+-2514,
+-2009,
+-4695,
+-5100,
+-4810,
+-2150,
+-6130,
+-1805,
+-5674,
+-3281]
+        }
+    ]
+};
+
+		
+		var tab1Table = echarts.init($tab1);
+		tab1Table.setOption(tab1Option);
+ 
+		$('a[data-toggle="tab"]').on('shown.bs.tab', function(e) {
+			var activeTab = $(e.target)[0].hash;
+			if (activeTab == "#tab2") {
+				echarts.dispose($tab2);
+				var tab2Table = echarts.init($tab2);
+				tab2Table.setOption(tab2Option);
+			} else if (activeTab == "#tab3") {
+				echarts.dispose($tab3);
+				var tab3Table = echarts.init($tab3);
+				tab3Table.setOption(tab3Option);
+			}else if (activeTab == "#tab4") {
+				echarts.dispose($tab4);
+				var tab4Table = echarts.init($tab4);
+				tab4Table.setOption(tab4Option);
+			}else if (activeTab == "#tab5") {
+				echarts.dispose($tab5);
+				var tab5Table = echarts.init($tab5);
+				tab5Table.setOption(tab5Option);
+			}else if (activeTab == "#tab10") {
+				echarts.dispose($tab10);
+				var tab10Table = echarts.init($tab10);
+				tab10Table.setOption(tab10Option);
+			}else if (activeTab == "#tab11") {
+				echarts.dispose($tab11);
+				var tab11Table = echarts.init($tab11);
+				tab11Table.setOption(tab11Option);
+			}else if (activeTab == "#tab12") {
+				echarts.dispose($tab12);
+				var tab12Table = echarts.init($tab12);
+				tab12Table.setOption(tab12Option);
+			}
+		});
+	</script>
+</body>
+</html>

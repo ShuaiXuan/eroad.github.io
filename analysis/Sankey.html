@@ -1,0 +1,340 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>站点桑基图</title>
+    <script src="echarts.min.js"></script>
+</head>
+<body>
+    <div id="chart1" style="width:1000px;height:500px;position: fixed;left: 0%;"></div>
+</body>
+<script type="text/javascript">
+
+var chartDom = document.getElementById('chart1');
+var myChart = echarts.init(chartDom);
+var option;
+
+option = {
+    backgroundColor:'',
+    series: {
+        type: 'sankey',
+        layout: 'none',
+        emphasis: {
+            focus: 'adjacency'
+        },
+        lineStyle: {
+            color: 'gradient',
+            curveness: 0.5
+        },
+        data: [{
+            name: '1号线(in)'
+        }, {
+            name: '2号线(in)'
+        },{
+            name: '3号线(in)'
+        },{
+            name: '4号线(in)'
+        },{
+            name: '5号线(in)'
+        },{
+            name: '10号线(in)'
+        },{
+            name: '11号线(in)'
+        },{
+            name: '12号线(in)'
+        }, {
+            name: '1号线(out)'
+        },{
+            name: '2号线(out)'
+        },{
+            name: '3号线(out)'
+        },{
+            name: '4号线(out)'
+        },{
+            name: '5号线(out)'
+        },{
+            name: '10号线(out)'
+        },{
+            name: '11号线(out)'
+        }, {
+            name: '12号线(out)'
+        }],
+        //color:['white'],
+        itemStyle:{
+            normal:{
+                label:{
+                        textStyle:{
+                            color:'white'
+                        }
+                }
+            }
+        },
+        links: [{
+            source: '1号线(in)',
+            target: '1号线(out)',
+            value: 67423
+        }, {
+            source: '1号线(in)',
+            target: '2号线(out)',
+            value: 17265
+        }, {
+            source: '1号线(in)',
+            target: '3号线(out)',
+            value: 22678
+        }, {
+            source: '1号线(in)',
+            target: '4号线(out)',
+            value: 632
+        }, {
+            source: '1号线(in)',
+            target: '5号线(out)',
+            value: 1382
+        }, {
+            source: '1号线(in)',
+            target: '10号线(out)',
+            value: 4895
+        }, {
+            source: '1号线(in)',
+            target: '11号线(out)',
+            value: 18726
+        }, {
+            source: '1号线(in)',
+            target: '12号线(out)',
+            value: 5625
+        }, {
+            source: '2号线(in)',
+            target: '1号线(out)',
+            value: 17988
+        }, {
+            source: '2号线(in)',
+            target: '2号线(out)',
+            value: 42530
+        }, {
+            source: '2号线(in)',
+            target: '3号线(out)',
+            value: 23239
+        }, {
+            source: '2号线(in)',
+            target: '4号线(out)',
+            value: 243
+        }, {
+            source: '2号线(in)',
+            target: '5号线(out)',
+            value: 809
+        }, {
+            source: '2号线(in)',
+            target: '10号线(out)',
+            value: 4448
+        }, {
+            source: '2号线(in)',
+            target: '11号线(out)',
+            value: 12303
+        }, {
+            source: '2号线(in)',
+            target: '12号线(out)',
+            value: 3043
+        }, {
+            source: '3号线(in)',
+            target: '1号线(out)',
+            value: 22392
+        }, {
+            source: '3号线(in)',
+            target: '2号线(out)',
+            value: 23156
+        }, {
+            source: '3号线(in)',
+            target: '3号线(out)',
+            value: 105776
+        }, {
+            source: '3号线(in)',
+            target: '4号线(out)',
+            value: 1302
+        }, {
+            source: '3号线(in)',
+            target: '5号线(out)',
+            value: 2928
+        }, {
+            source: '3号线(in)',
+            target: '10号线(out)',
+            value: 13934
+        }, {
+            source: '3号线(in)',
+            target: '11号线(out)',
+            value: 33572
+        }, {
+            source: '3号线(in)',
+            target: '12号线(out)',
+            value: 10048
+        }, {
+            source: '4号线(in)',
+            target: '1号线(out)',
+            value: 611
+        }, {
+            source: '4号线(in)',
+            target: '2号线(out)',
+            value: 267
+        }, {
+            source: '4号线(in)',
+            target: '3号线(out)',
+            value: 1285
+        }, {
+            source: '4号线(in)',
+            target: '4号线(out)',
+            value: 808
+        }, {
+            source: '4号线(in)',
+            target: '5号线(out)',
+            value: 246
+        }, {
+            source: '4号线(in)',
+            target: '10号线(out)',
+            value: 1235
+        }, {
+            source: '4号线(in)',
+            target: '11号线(out)',
+            value: 1421
+        }, {
+            source: '4号线(in)',
+            target: '12号线(out)',
+            value: 1229
+        }, {
+            source: '5号线(in)',
+            target: '1号线(out)',
+            value: 1408
+        }, {
+            source: '5号线(in)',
+            target: '2号线(out)',
+            value: 831
+        }, {
+            source: '5号线(in)',
+            target: '3号线(out)',
+            value: 2845
+        }, {
+            source: '5号线(in)',
+            target: '4号线(out)',
+            value: 237
+        }, {
+            source: '5号线(in)',
+            target: '5号线(out)',
+            value: 7481
+        }, {
+            source: '5号线(in)',
+            target: '10号线(out)',
+            value: 1190
+        }, {
+            source: '5号线(in)',
+            target: '11号线(out)',
+            value: 7142
+        }, {
+            source: '5号线(in)',
+            target: '12号线(out)',
+            value: 2214
+        }, {
+            source: '10号线(in)',
+            target: '1号线(out)',
+            value: 5611
+        }, {
+            source: '10号线(in)',
+            target: '2号线(out)',
+            value: 4712
+        }, {
+            source: '10号线(in)',
+            target: '3号线(out)',
+            value: 16196
+        }, {
+            source: '10号线(in)',
+            target: '4号线(out)',
+            value: 1341
+        }, {
+            source: '10号线(in)',
+            target: '5号线(out)',
+            value: 1275
+        }, {
+            source: '10号线(in)',
+            target: '10号线(out)',
+            value: 26288
+        }, {
+            source: '10号线(in)',
+            target: '11号线(out)',
+            value: 17361
+        }, {
+            source: '10号线(in)',
+            target: '12号线(out)',
+            value: 5488
+        }, {
+            source: '11号线(in)',
+            target: '1号线(out)',
+            value: 17528
+        }, {
+            source: '11号线(in)',
+            target: '2号线(out)',
+            value: 11568
+        }, {
+            source: '11号线(in)',
+            target: '3号线(out)',
+            value: 33577
+        }, {
+            source: '11号线(in)',
+            target: '4号线(out)',
+            value: 1486
+        }, {
+            source: '11号线(in)',
+            target: '5号线(out)',
+            value: 6841
+        }, {
+            source: '11号线(in)',
+            target: '10号线(out)',
+            value: 15311
+        }, {
+            source: '11号线(in)',
+            target: '11号线(out)',
+            value: 73802
+        }, {
+            source: '11号线(in)',
+            target: '12号线(out)',
+            value: 12419
+        }, {
+            source: '12号线(in)',
+            target: '1号线(out)',
+            value: 5911
+        }, {
+            source: '12号线(in)',
+            target: '2号线(out)',
+            value: 3159
+        }, {
+            source: '12号线(in)',
+            target: '3号线(out)',
+            value: 10625
+        }, {
+            source: '12号线(in)',
+            target: '4号线(out)',
+            value: 1237
+        }, {
+            source: '12号线(in)',
+            target: '5号线(out)',
+            value: 2223
+        }, {
+            source: '12号线(in)',
+            target: '10号线(out)',
+            value: 4584
+        }, {
+            source: '12号线(in)',
+            target: '11号线(out)',
+            value: 13206
+        }, {
+            source: '12号线(in)',
+            target: '12号线(out)',
+            value: 13478
+        }]
+
+        }
+    
+};
+
+
+option && myChart.setOption(option);
+
+</script>
+</html>
